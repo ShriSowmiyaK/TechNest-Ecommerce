@@ -6,13 +6,24 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require("hpp");
 const qs = require("qs");
+const cors = require("cors")
 const morgan = require("morgan");
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
 const orderRouter = require("./routes/orderRoutes");
 const AppError = require("./utils/AppError");
 const globalErrorHandler = require("./controllers/errorHandler");
+let frontendUrl = process.env.PROD_FRONTEND_URL;
+if(process.env.NODE_ENV == 'development')
+{
+    frontendUrl = process.env.FRONTEND_URL;
+}
 const app = express();
+
+app.use(cors({
+    origin: frontendUrl, 
+    credentials: true 
+}));
 app.use(cookieParser());
 app.use((req, res, next) => {
     Object.defineProperty(req, 'query', {

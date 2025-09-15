@@ -7,7 +7,12 @@ const apiRequest = async ({
 }) => {
   try {
     const queryString = new URLSearchParams(params).toString();
-    const finalUrl = queryString ? `${url}?${queryString}` : `${url}`;
+    let baseUrl = import.meta.env.VITE_BASE_URL_DEVELOPMENT;
+    if(import.meta.env.VITE_ENVIRONMENT == "production" )
+    {
+       baseUrl = import.meta.env.VITE_BASE_URL_PRODUCTION;
+    }
+    const finalUrl = queryString ? `${baseUrl}${url}?${queryString}` : `${baseUrl}${url}`;
     const response = await fetch(finalUrl, {
       method,
       headers: {

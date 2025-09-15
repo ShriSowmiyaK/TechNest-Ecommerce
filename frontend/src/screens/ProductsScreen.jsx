@@ -32,7 +32,7 @@ const ProductsScreen = ()=>{
 
     //fetch products
     const fetchProducts = async () => {
-      console.log(filters);
+      // console.log(filters);
     let query = [];
     if (filters.minPrice) query.push(`price[gte]=${filters.minPrice}`);
     if (filters.maxPrice) query.push(`price[lte]=${filters.maxPrice}`);

@@ -4,25 +4,23 @@
   "description": "Building TechNest using MERN,Redux",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
-    "client": "npm run dev --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShriSowmiyaK/TechNest.git"
+    "url": "git+https://github.com/ShriSowmiyaK/TechNest-Ecommerce.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ShriSowmiyaK/TechNest/issues"
+    "url": "https://github.com/ShriSowmiyaK/TechNest-Ecommerce/issues"
   },
-  "homepage": "https://github.com/ShriSowmiyaK/TechNest#readme",
+  "homepage": "https://github.com/ShriSowmiyaK/TechNest-Ecommerce/issues",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^4.2.0",
     "express-mongo-sanitize": "^2.2.0",
@@ -38,7 +36,6 @@
     "xss-clean": "^0.1.4"
   },
   "devDependencies": {
-    "concurrently": "^9.2.0",
     "nodemon": "^3.1.10"
   }
 }

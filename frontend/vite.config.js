@@ -6,16 +6,16 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
    server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8000',
-        changeOrigin: true,
-      },
-       configure: (proxy, options) => {
-          proxy.on('proxyReq', (proxyReq, req, res) => {
-            console.log(`[Vite Proxy] Forwarding request from ${req.url} to ${backendUrl}${req.url}`);
-          });
-        },
-    },
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:8000',
+    //     changeOrigin: true,
+    //   },
+    //    configure: (proxy, options) => {
+    //       proxy.on('proxyReq', (proxyReq, req, res) => {
+    //         console.log(`[Vite Proxy] Forwarding request from ${req.url} to ${backendUrl}${req.url}`);
+    //       });
+    //     },
+    // },
   },
 })
